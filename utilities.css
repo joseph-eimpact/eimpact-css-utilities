@@ -1,0 +1,267 @@
+@layer config {
+    :root {
+        /* FLUID CONFIG */
+        --config-fluid-screen-width-min: 1000px;
+        --config-fluid-screen-width-max: var(--theme-normal-container-max-width, 1390px);
+
+        /* MENU ITEMS CONFIG */
+        --config-menu-dropdown-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgMTIgOCIgZmlsbD0ibm9uZSI+DQogIDxwYXRoIGQ9Ik0xMiAxLjg0ODEyTDYgOEwwIDEuODQ4MTJMMS44MDI0OSAwTDYgNC4zMDM3NkwxMC4xOTc1IDBMMTIgMS44NDgxMloiIGZpbGw9IiMwMDcwNTQiLz4NCjwvc3ZnPg==") center / contain no-repeat;
+        --config-menu-dropdown-icon-size: 12px;
+        --config-menu-dropdown-icon-color: var(--theme-palette-color-1);
+        --config-menu-dropdown-icon-color--hover: var(--theme-palette-color-2);
+        --config-submenu-bg-color--hover: color-mix(in srgb, var(--theme-palette-color-1) 5%, white);
+
+        /* SWIPER / STRONG TESTIMONIAL CONFIG */
+        --config-nav-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDEyIDE4IiBmaWxsPSJub25lIj4NCiAgPHBhdGggZD0iTTEyIDlMMi4yNzYzMyAxOEwwIDE1Ljg5MzFMNy40NDczNCA5TDAgMi4xMDY5MkwyLjI3NjMzIDBMMTIgOVoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPg0KPC9zdmc+") center / contain no-repeat;
+        --config-nav-icon-size: 18px;
+        --config-nav-icon-color: var(--theme-palette-color-8, black);
+        --config-nav-icon-color--hover: inherit;
+        --config-nav-button-size: 40px;
+        --config-nav-button-border: none;   
+        --config-nav-button-radius: none;
+        --config-nav-button-color: var(--theme-palette-color-1, transparent);
+        --config-nav-button-color--hover: inherit;
+        --config-nav-button-shadow: var(--ei-box-shadow-clickable);
+        --config-nav-button-shadow--hover: inherit;
+
+        /* TESTIMONIALS CONFIG */
+        --config-testimonial-platform-size: 48px;
+        --config-testimonial-slide-padding-x: 48px;
+        --config-testimonial-slide-padding-y: 32px;
+        --config-testimonial-bg-color: white;
+        --config-testimonial-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.24);
+        --config-testimonial-platform-order: 0;
+        --config-testimonial-rating-order: 1;
+        --config-testimonial-content-order: 2;
+        --config-testimonial-name-order: 3;
+
+        /* THEME BUTTON ICONS */
+        --config-button-icon: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMTIiIGZpbGw9ImN1cnJlbnRDb2xvciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBhcmlhLWhpZGRlbj0idHJ1ZSI+PHBhdGggZD0iTTI0IDYuMDAwNDhMMTcuODg5NiAxMkwxNi4zNzUgMTAuNTEzOEwxOS45MDE0IDcuMDUxMzhIMFY0Ljk0ODYySDE5LjkwMDRMMTYuMzc1IDEuNDg2MjJMMTcuODg5NiAwTDI0IDYuMDAwNDhaIj48L3BhdGg+PC9zdmc+") center / contain no-repeat;
+        --config-button-icon-size: 24px;
+        --config-button-gap: 10px;
+        --config-button-icon-slide-amount: 10px;
+
+        /* CARDS CONFIG */
+        --config-card-buttons-align-bottom: 1; /* 1 = true; 0 = false */
+    }
+}
+
+
+@layer tokens {
+    :root {
+        --ei-transition: all 350ms ease-in-out;
+        --ei-container-margin: max(calc((100vw - var(--theme-normal-container-max-width)) / 2), calc((100vw - var(--theme-container-width)) / 2));
+        --ei-narrow-max: var(--theme-narrow-container-max-width, 800px);
+        --ei-box-shadow-1: 0 2px 4px 0 rgba(0, 0, 0, 0.24);
+        --ei-box-shadow-2: 0 4px 8px 0 rgba(0, 0, 0, 0.32);
+    }
+}
+
+@layer utility {
+    .ei-narrow-max {
+        max-width: var(--ei-narrow-max)!important;
+        margin-inline: auto;
+    }
+    .ei-shadow-1 {
+        box-shadow: var(--ei-box-shadow-1);
+    }
+    .ei-shadow-2 {
+        box-shadow: var(--ei-box-shadow-2);
+    }
+    .ei-shadow-1--hover-2 {
+        transition: var(--ei-transition);
+        box-shadow: var(--ei-box-shadow-1);
+        &:hover {
+            box-shadow: var(--ei-box-shadow-2);
+        }
+    }
+    .ei-container-margin-inline {
+        margin-inline: var(--ei-container-margin);
+    }
+    .ei-container-margin-left {
+        margin-left: var(--ei-container-margin);
+    }
+    .ei-container-margin-right {
+        margin-right: var(--ei-container-margin);
+    }
+}
+
+@layer fluid {
+    :root {
+        --_range: calc((100vw - var(--config-fluid-screen-width-min)) / tan(atan2(var(--config-fluid-screen-width-max) - var(--config-fluid-screen-width-min), 1px)));
+    }
+    * {
+        --ei-fluid: clamp(var(--ei-min), calc(var(--ei-min) + (tan(atan2(var(--ei-max), 1px)) - tan(atan2(var(--ei-min), 1px))) * var(--_range)), var(--ei-max));
+    }
+}
+
+header#header [data-items]>* {
+    margin-inline: 0px; /* This allows the space between header blocks to be consistent with gap size set below. */
+}
+header#header ul.menu {
+    --ei-max: var(--ei-gap-max, var(--menu-items-gap));
+    --ei-min: var(--ei-gap-min, var(--menu-items-gap));
+    gap: var(--ei-fluid);
+}
+header#header nav:not(:last-child) ul.menu {
+    margin-right: var(--ei-fluid);
+}
+header#header a.ct-menu-link {
+    --ei-min: var(--ei-font-size-min, var(--theme-font-size));
+    --ei-max: var(--ei-font-size-max, var(--theme-font-size));
+    font-size: min(var(--ei-fluid), var(--theme-font-size));
+}
+header#header a.ct-button {
+    --ei-min: var(--ei-font-size-min, var(--theme-button-font-size));
+    --ei-max: var(--ei-font-size-max, var(--theme-button-font-size));
+    font-size: min(var(--ei-fluid), var(--theme-button-font-size));
+}
+header#header .site-logo-container {
+    --ei-max: var(--ei-logo-height-max, var(--logo-max-height));
+    --ei-min: var(--ei-logo-height-min);
+    height: var(--ei-fluid, var(--logo-max-height));
+}
+
+/* DROPDOWN BACKGROUND AND CHEVRON ICON */
+header#header ul.sub-menu li {
+    background-color: inherit;
+    transition: var(--ei-transition);
+}
+header#header ul.sub-menu li:hover {
+    background-color: var(--config-submenu-bg-color--hover);
+}
+span.ct-toggle-dropdown-desktop svg {
+    display: none;
+}
+span.ct-toggle-dropdown-desktop::after {
+    content: '';
+    mask: var(--config-menu-dropdown-icon);
+    width: 13px;
+    height: 8px;
+    background-color: var(--config-menu-dropdown-icon-color, currentColor);
+    transition: var(--ei-transition);
+}
+.ct-active span.ct-toggle-dropdown-desktop::after {
+    transform: rotate(-180deg) translateX(0) translateY(0);
+    background-color: var(--config-menu-dropdown-icon-color--hover, currentColor);
+}
+
+
+
+ /* SWIPER & STRONG TESTIMONIAL NAVIGATION ICONS */
+div.strong-view.controls-style-buttons:not(.rtl) :is(.wpmslider-prev, .wpmslider-next),
+:is(.swiper-button-next, .swiper-button-prev) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--ei-transition);
+    width: var(--config-nav-button-size);
+    height: var(--config-nav-button-size);
+    border-radius: var(--config-nav-button-radius, 0px);
+    background: var(--config-nav-button-color);
+    box-shadow: var(--config-nav-button-shadow);
+    &:hover {
+        background: var(--config-nav-button-color--hover, var(--config-nav-button-color));
+        box-shadow: var(--config-nav-button-shadow--hover, var(--config-nav-button-shadow));
+        &::after, &::before {
+            background: var(--config-nav-icon-color--hover, var(--config-nav-icon-color));
+        }
+    }
+}
+div.strong-view.controls-style-buttons:not(.rtl) :is(.wpmslider-prev, .wpmslider-next)::before,
+:is(.swiper-button-next, .swiper-button-prev)::after {
+    transition: var(--ei-transition);
+    height: 0;
+    position: unset;
+    mask: var(--config-nav-icon);
+    background-color: var(--config-nav-icon-color);
+    padding: calc(var(--config-nav-icon-size) / 2);
+}
+div.strong-view.controls-style-buttons:not(.rtl) .wpmslider-prev::before,
+.swiper-button-prev::after {
+    transform: rotate(180deg);
+}
+
+
+/* STRONG TESTIMONIALS DEFAULTS */
+.wpmslider-viewport {
+    height: auto!important;
+ }
+.wpmtst-testimonial {
+    height: auto !important;
+}
+div.strong-view.wpmtst-unstyled .wpmtst-testimonial-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: center;
+}
+div.strong-view.wpmtst-unstyled .wpmtst-testimonial-inner .testimonial-platform {
+    order: var(--config-testimonial-platform-order);
+    aspect-ratio: 1;
+    img {
+        width: var(--config-testimonial-platform-size);
+    }
+}
+div.strong-view.wpmtst-unstyled .wpmtst-testimonial-inner .testimonial-rating {
+    order: var(--config-testimonial-rating-order);
+}
+div.strong-view.wpmtst-unstyled .wpmtst-testimonial-inner .testimonial-content {
+    order: var(--config-testimonial-content-order);
+    --theme-content-spacing: 0px;
+    width: 100%;
+}
+div.strong-view.wpmtst-unstyled .wpmtst-testimonial-inner .testimonial-name {
+    order: var(--config-testimonial-name-order);
+    width: 100%;
+}
+.wpmslider-content {
+    display: flex;
+ }
+
+/* in progress... */
+div.strong-view.wpmtst-unstyled .wpmtst-testimonial {
+    --inset: 6px; /* the margin plus the inset value is the card gap (e.g. 26px + 6px = 32px gap */
+    padding-block: calc(var(--inset) + var(--config-testimonial-slide-padding-x));
+    padding-inline: calc(var(--inset) + var(--config-testimonial-slide-padding-y));
+    &::after {
+        content: '';
+        position: absolute;
+        inset: var(--inset);
+        box-shadow: var(--config-testimonial-box-shadow);
+        background-color: var(--config-testimonial-bg-color);
+        z-index: -1;
+    }
+}
+
+
+ /* BUTTON ARROWS */
+a.ct-button, .kb-button {
+    --theme-button-gap: 0px;
+}
+a.ct-button::after, .kb-button::after {
+    content: '';
+    mask: var(--config-button-icon);
+    width: var(--config-button-icon-size);
+    height: -webkit-fill-available;
+    background-color: currentColor;
+    margin-left: var(--config-button-gap);
+    transition: var(--ei-transition);
+}
+a.ct-button:hover::after, .kb-button:hover::after,
+.kb-section-has-link:has(.kb-section-link-overlay:hover) .kb-button::after  {
+    margin-left: calc(var(--config-button-icon-slide-amount) + var(--config-button-gap));
+    margin-right: calc(var(--config-button-icon-slide-amount) * -1);
+}
+
+
+/* CARD BUTTONS ALIGNMENT */
+.kt-inner-column-height-full .kt-inside-inner-col {
+	display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.kt-inner-column-height-full :is(.wp-block-buttons, .kb-buttons-wrap) {
+	flex-grow: var(--config-card-buttons-align-bottom);
+	align-items: flex-end;
+}
