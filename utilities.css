@@ -5,23 +5,24 @@
         --config-fluid-screen-width-max: var(--theme-normal-container-max-width, 1390px);
 
         /* MENU ITEMS CONFIG */
-        --config-menu-dropdown-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgMTIgOCIgZmlsbD0ibm9uZSI+DQogIDxwYXRoIGQ9Ik0xMiAxLjg0ODEyTDYgOEwwIDEuODQ4MTJMMS44MDI0OSAwTDYgNC4zMDM3NkwxMC4xOTc1IDBMMTIgMS44NDgxMloiIGZpbGw9IiMwMDcwNTQiLz4NCjwvc3ZnPg==") center / contain no-repeat;
+        --config-menu-dropdown-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgMTIgOCIgZmlsbD0ibm9uZSI+DQogIDxwYXRoIGQ9Ik0xMiAxLjg0ODEyTDYgOEwwIDEuODQ4MTJMMS44MDI0OSAwTDYgNC4zMDM3NkwxMC4xOTc1IDBMMTIgMS44NDgxMloiIGZpbGw9IiMwMDcwNTQiLz4NCjwvc3ZnPg==");
         --config-menu-dropdown-icon-size: 12px;
         --config-menu-dropdown-icon-color: var(--theme-palette-color-1);
         --config-menu-dropdown-icon-color--hover: var(--theme-palette-color-2);
         --config-submenu-bg-color--hover: color-mix(in srgb, var(--theme-palette-color-1) 5%, white);
 
         /* SWIPER / STRONG TESTIMONIAL CONFIG */
-        --config-nav-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDEyIDE4IiBmaWxsPSJub25lIj4NCiAgPHBhdGggZD0iTTEyIDlMMi4yNzYzMyAxOEwwIDE1Ljg5MzFMNy40NDczNCA5TDAgMi4xMDY5MkwyLjI3NjMzIDBMMTIgOVoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPg0KPC9zdmc+") center / contain no-repeat;
+        --config-nav-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDEyIDE4IiBmaWxsPSJub25lIj4NCiAgPHBhdGggZD0iTTEyIDlMMi4yNzYzMyAxOEwwIDE1Ljg5MzFMNy40NDczNCA5TDAgMi4xMDY5MkwyLjI3NjMzIDBMMTIgOVoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPg0KPC9zdmc+");
         --config-nav-icon-size: 18px;
         --config-nav-icon-color: var(--theme-palette-color-8, black);
         --config-nav-icon-color--hover: inherit;
         --config-nav-button-size: 40px;
         --config-nav-button-border: none;   
+        --config-nav-button-border--hover: var(--config-nav-button-border);   
         --config-nav-button-radius: none;
         --config-nav-button-color: var(--theme-palette-color-1, transparent);
         --config-nav-button-color--hover: var(--theme-palette-color-2, inherit);
-        --config-nav-button-shadow: var(--ei-box-shadow-1);
+        --config-nav-button-shadow: none;
         --config-nav-button-shadow--hover: inherit;
 
         /* TESTIMONIALS CONFIG */
@@ -29,14 +30,20 @@
         --config-testimonial-slide-padding-x: 48px;
         --config-testimonial-slide-padding-y: 32px;
         --config-testimonial-bg-color: white;
-        --config-testimonial-box-shadow: var(--ei-box-shadow-1);
+        --config-testimonial-box-shadow: none;
+        --config-testimonial-border-color: unset;
+        --config-testimonial-border-width: unset;
+        --config-testimonial-border-style: solid;
+        --config-testimonial-border-radius: unset;
         --config-testimonial-platform-order: 0;
         --config-testimonial-rating-order: 1;
         --config-testimonial-content-order: 2;
         --config-testimonial-name-order: 3;
+        --config-testimonial-navigation-top-offset: calc(50% - var(--config-nav-button-size) / 2);
+        --config-testimonial-navigation-sides-offset: 0px;
 
         /* THEME BUTTON ICONS */
-        --config-button-icon: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMTIiIGZpbGw9ImN1cnJlbnRDb2xvciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBhcmlhLWhpZGRlbj0idHJ1ZSI+PHBhdGggZD0iTTI0IDYuMDAwNDhMMTcuODg5NiAxMkwxNi4zNzUgMTAuNTEzOEwxOS45MDE0IDcuMDUxMzhIMFY0Ljk0ODYySDE5LjkwMDRMMTYuMzc1IDEuNDg2MjJMMTcuODg5NiAwTDI0IDYuMDAwNDhaIj48L3BhdGg+PC9zdmc+") center / contain no-repeat;
+        --config-button-icon: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjQgMTIiIGZpbGw9ImN1cnJlbnRDb2xvciIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBhcmlhLWhpZGRlbj0idHJ1ZSI+PHBhdGggZD0iTTI0IDYuMDAwNDhMMTcuODg5NiAxMkwxNi4zNzUgMTAuNTEzOEwxOS45MDE0IDcuMDUxMzhIMFY0Ljk0ODYySDE5LjkwMDRMMTYuMzc1IDEuNDg2MjJMMTcuODg5NiAwTDI0IDYuMDAwNDhaIj48L3BhdGg+PC9zdmc+");
         --config-button-icon-size: 24px;
         --config-button-gap: 10px;
         --config-button-icon-slide-amount: 10px;
@@ -95,7 +102,7 @@
     }
 }
 
-header#header [data-items]>* {
+header#header [data-device="desktop"] [data-items]>* {
     margin-inline: 0px; /* This allows the space between header blocks to be consistent with gap size set below. */
 }
 header#header ul.menu {
@@ -135,7 +142,7 @@ span.ct-toggle-dropdown-desktop svg {
 }
 span.ct-toggle-dropdown-desktop::after {
     content: '';
-    mask: var(--config-menu-dropdown-icon);
+    mask: var(--config-menu-dropdown-icon) center / contain no-repeat;
     width: 13px;
     height: 8px;
     background-color: var(--config-menu-dropdown-icon-color, currentColor);
@@ -149,6 +156,11 @@ span.ct-toggle-dropdown-desktop::after {
 
 
  /* SWIPER & STRONG TESTIMONIAL NAVIGATION ICONS */
+.swiper-button-next, .swiper-button-prev {
+    svg {
+        display: none;
+    }
+}
 div.strong-view.controls-style-buttons:not(.rtl) :is(.wpmslider-prev, .wpmslider-next),
 :is(.swiper-button-next, .swiper-button-prev):not(.swiper-button-lock) {
     display: flex;
@@ -157,10 +169,12 @@ div.strong-view.controls-style-buttons:not(.rtl) :is(.wpmslider-prev, .wpmslider
     transition: var(--ei-transition);
     width: var(--config-nav-button-size);
     height: var(--config-nav-button-size);
+    border: var(--config-nav-button-border);
     border-radius: var(--config-nav-button-radius, 0px);
     background: var(--config-nav-button-color);
     box-shadow: var(--config-nav-button-shadow);
     &:hover {
+        border: var(--config-nav-button-border--hover);
         background: var(--config-nav-button-color--hover, var(--config-nav-button-color));
         box-shadow: var(--config-nav-button-shadow--hover, var(--config-nav-button-shadow));
         &::after, &::before {
@@ -174,7 +188,7 @@ div.strong-view.controls-style-buttons:not(.rtl) :is(.wpmslider-prev, .wpmslider
     transition: var(--ei-transition);
     height: 0;
     position: unset;
-    mask: var(--config-nav-icon);
+    mask: var(--config-nav-icon) center / contain no-repeat;
     background-color: var(--config-nav-icon-color);
     padding: calc(var(--config-nav-icon-size) / 2);
 }
@@ -218,11 +232,25 @@ div.strong-view.wpmtst-unstyled .wpmtst-testimonial-inner .testimonial-name {
 }
 .wpmslider-content {
     display: flex;
- }
+}
+
+div.strong-view.wpmtst-unstyled {
+    --inset: 6px; /* the margin plus the inset value is the card gap (e.g. 26px + 6px = 32px gap */
+}
+div.strong-view.controls-type-sides-outside .wpmslider-prev, 
+div.strong-view.controls-type-sides-outside .wpmslider-next {
+    top: var(--config-testimonial-navigation-top-offset);
+    --_sides-offset: calc(var(--inset) - var(--config-nav-button-size) - var(--config-testimonial-navigation-sides-offset));
+}
+div.strong-view.controls-type-sides-outside:not(.rtl) .wpmslider-prev {
+    left: var(--_sides-offset);
+}
+div.strong-view.controls-type-sides-outside:not(.rtl) .wpmslider-next {
+    right: var(--_sides-offset);
+}
 
 /* in progress... */
 div.strong-view.wpmtst-unstyled .wpmtst-testimonial {
-    --inset: 6px; /* the margin plus the inset value is the card gap (e.g. 26px + 6px = 32px gap */
     padding-block: calc(var(--inset) + var(--config-testimonial-slide-padding-x));
     padding-inline: calc(var(--inset) + var(--config-testimonial-slide-padding-y));
     &::after {
@@ -231,6 +259,10 @@ div.strong-view.wpmtst-unstyled .wpmtst-testimonial {
         inset: var(--inset);
         box-shadow: var(--config-testimonial-box-shadow);
         background-color: var(--config-testimonial-bg-color);
+        border-color: var(--config-testimonial-border-color);
+        border-width: var(--config-testimonial-border-width);
+        border-style: var(--config-testimonial-border-style);
+        border-radius: var(--config-testimonial-border-radius);
         z-index: -1;
     }
 }
@@ -244,7 +276,7 @@ div.strong-view.wpmtst-unstyled .wpmtst-testimonial {
 }
 a.ct-button::after, .kb-button::after, .ei-button-icon>a::after {
     content: '';
-    mask: var(--config-button-icon);
+    mask: var(--config-button-icon) center / contain no-repeat;
     width: var(--config-button-icon-size);
     height: var(--config-button-icon-size);
     background-color: currentColor;
