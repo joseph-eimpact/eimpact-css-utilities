@@ -9,7 +9,7 @@
         --config-menu-dropdown-icon-size: 12px;
         --config-menu-dropdown-icon-color: var(--theme-palette-color-1);
         --config-menu-dropdown-icon-color--hover: var(--theme-palette-color-2);
-        --config-submenu-bg-color--hover: color-mix(in srgb, var(--theme-palette-color-1) 5%, white);
+        --config-submenu-bg-color--hover: color-mix(in srgb, var(--theme-palette-color-1) 5%, inherit);
 
         /* SWIPER / STRONG TESTIMONIAL CONFIG */
         --config-nav-icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDEyIDE4IiBmaWxsPSJub25lIj4NCiAgPHBhdGggZD0iTTEyIDlMMi4yNzYzMyAxOEwwIDE1Ljg5MzFMNy40NDczNCA5TDAgMi4xMDY5MkwyLjI3NjMzIDBMMTIgOVoiIGZpbGw9ImN1cnJlbnRDb2xvciIvPg0KPC9zdmc+");
@@ -118,7 +118,7 @@ header#header a.ct-menu-link {
     --ei-max: var(--ei-font-size-max, var(--theme-font-size));
     font-size: min(var(--ei-fluid), var(--theme-font-size));
 }
-header#header a.ct-button {
+header#header a[class*="ct-button"] {
     --ei-min: var(--ei-font-size-min, var(--theme-button-font-size));
     --ei-max: var(--ei-font-size-max, var(--theme-button-font-size));
     font-size: min(var(--ei-fluid), var(--theme-button-font-size));
@@ -199,9 +199,9 @@ div.strong-view.controls-style-buttons:not(.rtl) .wpmslider-prev::before,
 
 
 /* STRONG TESTIMONIALS DEFAULTS */
-.wpmslider-viewport {
+/* .wpmslider-viewport {
     height: auto!important;
- }
+ } */
 .wpmtst-testimonial {
     height: auto !important;
 }
@@ -237,15 +237,19 @@ div.strong-view.wpmtst-unstyled .wpmtst-testimonial-inner .testimonial-name {
 div.strong-view.wpmtst-unstyled {
     --inset: 6px; /* the margin plus the inset value is the card gap (e.g. 26px + 6px = 32px gap */
 }
-div.strong-view.controls-type-sides-outside .wpmslider-prev, 
-div.strong-view.controls-type-sides-outside .wpmslider-next {
+div.strong-view.controls-style-buttons:not(.rtl) a.wpmslider-prev, 
+div.strong-view.controls-style-buttons:not(.rtl) a.wpmslider-next,
+div.strong-view.controls-type-sides-outside:not(.rtl) .wpmslider-prev,
+div.strong-view.controls-type-sides-outside:not(.rtl) .wpmslider-next {
     top: var(--config-testimonial-navigation-top-offset);
     --_sides-offset: calc(var(--inset) - var(--config-nav-button-size) - var(--config-testimonial-navigation-sides-offset));
 }
+div.strong-view.controls-style-buttons:not(.rtl) a.wpmslider-prev,
 div.strong-view.controls-type-sides-outside:not(.rtl) .wpmslider-prev {
     left: var(--_sides-offset);
 }
-div.strong-view.controls-type-sides-outside:not(.rtl) .wpmslider-next {
+div.strong-view.controls-type-sides-outside:not(.rtl) .wpmslider-next,
+div.strong-view.controls-style-buttons:not(.rtl) a.wpmslider-next {
     right: var(--_sides-offset);
 }
 
