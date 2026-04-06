@@ -230,7 +230,7 @@ div.strong-view.wpmtst-unstyled .wpmtst-testimonial-inner .testimonial-name {
     order: var(--config-testimonial-name-order);
     width: 100%;
 }
-.wpmslider-content {
+.slider-stretch .wpmslider-content {
     display: flex;
 }
 
