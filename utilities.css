@@ -57,7 +57,7 @@
 @layer tokens {
     :root {
         --ei-transition: all 350ms ease-in-out;
-        --ei-container-margin: max(calc((100vw - var(--theme-normal-container-max-width)) / 2), calc((100vw - var(--theme-container-width)) / 2));
+        --ei-container-margin: calc((100vw - var(--theme-normal-container-max-width, var(--config-fluid-screen-width-max))) / 2);
         --ei-narrow-max: var(--theme-narrow-container-max-width, 800px);
         --ei-box-shadow-1: 0 2px 4px 0 rgba(0, 0, 0, 0.24);
         --ei-box-shadow-2: 0 4px 8px 0 rgba(0, 0, 0, 0.32);
@@ -67,7 +67,7 @@
 @layer utility {
     .ei-narrow-max {
         max-width: var(--ei-narrow-max)!important;
-        margin-inline: auto;
+        margin-inline: auto!important;
     }
     .ei-shadow-1 {
         box-shadow: var(--ei-box-shadow-1);
@@ -122,6 +122,8 @@ header#header a[class*="ct-button"] {
     --ei-min: var(--ei-font-size-min, var(--theme-button-font-size));
     --ei-max: var(--ei-font-size-max, var(--theme-button-font-size));
     font-size: min(var(--ei-fluid), var(--theme-button-font-size));
+    padding-block: calc(var(--ei-theme-button-padding-block, 16em) / tan(atan2(var(--theme-button-font-size), 1px)));
+    padding-inline: calc(var(--ei-theme-button-padding-inline, 24em) / tan(atan2(var(--theme-button-font-size), 1px)));
 }
 header#header .site-logo-container {
     --ei-max: var(--ei-logo-height-max, var(--logo-max-height));
@@ -205,6 +207,9 @@ div.strong-view.controls-style-buttons:not(.rtl) .wpmslider-prev::before,
 .wpmtst-testimonial {
     height: auto !important;
 }
+.wpmslider-content {
+    display: flex;
+ }
 div.strong-view.wpmtst-unstyled .wpmtst-testimonial-inner {
     display: flex;
     flex-wrap: wrap;
@@ -278,7 +283,8 @@ div.strong-view.wpmtst-unstyled .wpmtst-testimonial {
     display: flex;
     align-items: center;
 }
-a.ct-button::after, .kb-button::after, .ei-button-icon>a::after {
+a.ct-button::after, .kb-button::after, .ei-button-icon>a::after,
+.entry-card .entry-button:after {
     content: '';
     mask: var(--config-button-icon) center / contain no-repeat;
     width: var(--config-button-icon-size);
@@ -288,7 +294,8 @@ a.ct-button::after, .kb-button::after, .ei-button-icon>a::after {
     transition: var(--ei-transition);
 }
 a.ct-button:hover::after, .kb-button:hover::after, .ei-button-icon>a:hover::after,
-:has(>.kb-section-link-overlay:hover) .kb-button::after  {
+:has(>.kb-section-link-overlay:hover) .kb-button::after,
+:has(>.kb-section-link-overlay:hover) .entry-button::after {
     margin-left: calc(var(--config-button-icon-slide-amount) + var(--config-button-gap));
     margin-right: calc(var(--config-button-icon-slide-amount) * -1);
 }
