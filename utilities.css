@@ -57,7 +57,11 @@
 @layer tokens {
     :root {
         --ei-transition: all 350ms ease-in-out;
-        --ei-container-margin: calc((100vw - var(--theme-normal-container-max-width, var(--config-fluid-screen-width-max))) / 2);
+        --ei-container-margin: max(
+            15px, 
+            calc((100vw - var(--theme-container-width)) / 2), 
+            calc((100vw - var(--theme-normal-container-max-width, var(--config-fluid-screen-width-max))) / 2)
+        );
         --ei-narrow-max: var(--theme-narrow-container-max-width, 800px);
         --ei-box-shadow-1: 0 2px 4px 0 rgba(0, 0, 0, 0.24);
         --ei-box-shadow-2: 0 4px 8px 0 rgba(0, 0, 0, 0.32);
@@ -113,7 +117,8 @@ header#header ul.menu {
 header#header nav:not(:last-child) ul.menu {
     margin-right: var(--ei-fluid);
 }
-header#header a.ct-menu-link {
+header#header a.ct-menu-link, 
+header#header .contact-text a {
     --ei-min: var(--ei-font-size-min, var(--theme-font-size));
     --ei-max: var(--ei-font-size-max, var(--theme-font-size));
     font-size: min(var(--ei-fluid), var(--theme-font-size));
