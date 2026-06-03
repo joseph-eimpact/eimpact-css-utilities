@@ -2,9 +2,8 @@
     :root {
         /* FLUID CONFIG */
         --config-fluid-screen-width-min: 1000px;
-        --config-fluid-screen-width-max: var(
-            --theme-normal-container-max-width,
-            1390px
+        --config-fluid-screen-width-max: calc(
+            var(--theme-normal-container-max-width, 1490px) + 10px
         );
 
         /* MENU ITEMS CONFIG */
