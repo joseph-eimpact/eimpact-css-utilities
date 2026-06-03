@@ -3,7 +3,7 @@
         /* FLUID CONFIG */
         --config-fluid-screen-width-min: 1000px;
         --config-fluid-screen-width-max: calc(
-            var(--theme-normal-container-max-width, 1490px) + 10px
+            var(--theme-normal-container-max-width, 1440px) + 60px
         );
 
         /* MENU ITEMS CONFIG */
@@ -89,13 +89,13 @@
         max-width: var(--ei-narrow-max) !important;
         margin-inline: auto !important;
     }
-    .ei-shadow-1 > * {
+    .ei-shadow-1 > div {
         box-shadow: var(--ei-box-shadow-1);
     }
-    .ei-shadow-2 > * {
+    .ei-shadow-2 > div {
         box-shadow: var(--ei-box-shadow-2);
     }
-    .ei-shadow-1--hover-2 > * {
+    .ei-shadow-1--hover-2 > div {
         transition: var(--ei-transition);
         box-shadow: var(--ei-box-shadow-1);
         &:hover {
