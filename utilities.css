@@ -38,7 +38,7 @@
         --config-testimonial-bg-color: white;
         --config-testimonial-box-shadow: none;
         --config-testimonial-border-color: unset;
-        --config-testimonial-border-width: unset;
+        --config-testimonial-border-width: 0;
         --config-testimonial-border-style: solid;
         --config-testimonial-border-radius: unset;
         --config-testimonial-platform-order: 0;
@@ -175,7 +175,7 @@ header#header a[class*="ct-button"] {
 header#header .site-logo-container {
     --ei-max: var(--ei-logo-height-max, var(--logo-max-height));
     --ei-min: var(--ei-logo-height-min);
-    height: var(--ei-fluid, var(--logo-max-height));
+    height: min(var(--ei-fluid, var(--logo-max-height)), var(--logo-max-height));
 }
 
 /* DROPDOWN BACKGROUND AND CHEVRON ICON */
