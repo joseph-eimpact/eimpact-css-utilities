@@ -65,18 +65,12 @@
     :root {
         --ei-transition: all 350ms ease-in-out;
         --ei-container-margin: max(
+            0px,
+            calc( (100vw - var(--theme-normal-container-max-width, var(--config-fluid-screen-width-max))) / 2 )
+        );
+        --ei-container-margin-15: max(
             15px,
-            calc((100vw - var(--theme-container-width)) / 2),
-            calc(
-                (
-                        100vw -
-                            var(
-                                --theme-normal-container-max-width,
-                                var(--config-fluid-screen-width-max)
-                            )
-                    ) /
-                    2
-            )
+            calc( (100vw - var(--theme-normal-container-max-width, var(--config-fluid-screen-width-max))) / 2 )
         );
         --ei-narrow-max: var(--theme-narrow-container-max-width, 800px);
         --ei-box-shadow-1: 0 2px 4px 0 rgba(0, 0, 0, 0.24);
@@ -110,6 +104,28 @@
     }
     .ei-container-margin-right {
         margin-right: var(--ei-container-margin);
+    }
+    .ei-container-margin-inline-15 {
+        margin-inline: var(--ei-container-margin-15);
+    }
+    .ei-container-margin-left-15 {
+        margin-left: var(--ei-container-margin-15);
+    }
+    .ei-container-margin-right-15 {
+        margin-right: var(--ei-container-margin-15);
+    }
+
+    .ei-container-margin-right--inside>div {
+        margin-right: var(--ei-container-margin);
+    }
+    .ei-container-margin-right--inside-15>div {
+        margin-right: var(--ei-container-margin-15);
+    }
+    .ei-container-margin-left--inside>div {
+        margin-left: var(--ei-container-margin);
+    }
+    .ei-container-margin-left--inside-15>div {
+        margin-left: var(--ei-container-margin-15);
     }
 }
 
@@ -348,7 +364,8 @@ div.strong-view.wpmtst-unstyled .wpmtst-testimonial {
 /* BUTTON ARROWS */
 a.ct-button,
 .kb-button,
-.ei-button-icon > a {
+.ei-button-icon > a,
+a.ei-button-icon {
     --theme-button-gap: 0px;
     display: flex;
     align-items: center;
@@ -356,6 +373,7 @@ a.ct-button,
 a.ct-button::after,
 .kb-button::after,
 .ei-button-icon > a::after,
+a.ei-button-icon::after,
 .entry-card .entry-button:after {
     content: "";
     mask: var(--config-button-icon) center / contain no-repeat;
@@ -368,6 +386,7 @@ a.ct-button::after,
 a.ct-button:hover::after,
 .kb-button:hover::after,
 .ei-button-icon > a:hover::after,
+a.ei-button-icon:hover::after,
 :has(> .kb-section-link-overlay:hover) .kb-button::after,
 :has(> .kb-section-link-overlay:hover) .entry-button::after {
     margin-left: calc(
