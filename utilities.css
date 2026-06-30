@@ -388,7 +388,9 @@ a.ct-button:hover::after,
 .ei-button-icon > a:hover::after,
 a.ei-button-icon:hover::after,
 :has(> .kb-section-link-overlay:hover) .kb-button::after,
-:has(> .kb-section-link-overlay:hover) .entry-button::after {
+:has(> .kb-section-link-overlay:hover) .entry-button::after,
+:has(> .kb-section-link-overlay:hover) .ei-button-icon > a::after,
+:has(> .kb-section-link-overlay:hover) a.ei-button-icon::after {
     margin-left: calc(
         var(--config-button-icon-slide-amount) + var(--config-button-gap)
     );
