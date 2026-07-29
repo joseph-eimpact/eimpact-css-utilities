@@ -277,9 +277,10 @@ div.strong-view.controls-style-buttons:not(.rtl) .wpmslider-prev::before,
 }
 
 /* STRONG TESTIMONIALS DEFAULTS */
-.wpmslider-viewport {
+.wpmslider-viewport,
+.wpmtst-testimonial {
     height: auto!important;
-}
+ }
 div.strong-view.wpmtst-unstyled .wpmtst-testimonial-inner {
     display: flex;
     flex-wrap: wrap;
