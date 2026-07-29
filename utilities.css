@@ -25,7 +25,7 @@
         --config-nav-button-size: 40px;
         --config-nav-button-border: none;
         --config-nav-button-border--hover: var(--config-nav-button-border);
-        --config-nav-button-radius: none;
+        --config-nav-button-radius: 0px;
         --config-nav-button-color: var(--theme-palette-color-1, transparent);
         --config-nav-button-color--hover: var(--theme-palette-color-2, inherit);
         --config-nav-button-shadow: none;
@@ -83,13 +83,13 @@
         max-width: var(--ei-narrow-max) !important;
         margin-inline: auto !important;
     }
-    .ei-shadow-1 > div {
+    .ei-shadow-1 > * {
         box-shadow: var(--ei-box-shadow-1);
     }
-    .ei-shadow-2 > div {
+    .ei-shadow-2 > * {
         box-shadow: var(--ei-box-shadow-2);
     }
-    .ei-shadow-1--hover-2 > div {
+    .ei-shadow-1--hover-2 > * {
         transition: var(--ei-transition);
         box-shadow: var(--ei-box-shadow-1);
         &:hover {
@@ -208,8 +208,8 @@ span.ct-toggle-dropdown-desktop svg {
 span.ct-toggle-dropdown-desktop::after {
     content: "";
     mask: var(--config-menu-dropdown-icon) center / contain no-repeat;
-    width: 13px;
-    height: 8px;
+    width: var(--config-menu-dropdown-icon-size);
+    height: var(--config-menu-dropdown-icon-size);
     background-color: var(--config-menu-dropdown-icon-color, currentColor);
     transition: var(--ei-transition);
 }
@@ -277,14 +277,8 @@ div.strong-view.controls-style-buttons:not(.rtl) .wpmslider-prev::before,
 }
 
 /* STRONG TESTIMONIALS DEFAULTS */
-/* .wpmslider-viewport {
+.wpmslider-viewport {
     height: auto!important;
- } */
-.wpmtst-testimonial {
-    height: auto !important;
-}
-.wpmslider-content {
-    display: flex;
 }
 div.strong-view.wpmtst-unstyled .wpmtst-testimonial-inner {
     display: flex;
