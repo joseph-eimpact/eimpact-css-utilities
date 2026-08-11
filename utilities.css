@@ -360,7 +360,8 @@ div.strong-view.wpmtst-unstyled .wpmtst-testimonial {
 a.ct-button,
 .kb-button,
 .ei-button-icon > a,
-a.ei-button-icon {
+a.ei-button-icon,
+.wp-block-button__link {
     --theme-button-gap: 0px;
     display: flex;
     align-items: center;
@@ -369,6 +370,7 @@ a.ct-button::after,
 .kb-button::after,
 .ei-button-icon > a::after,
 a.ei-button-icon::after,
+.wp-block-button__link::after,
 .entry-card .entry-button:after {
     content: "";
     mask: var(--config-button-icon) center / contain no-repeat;
@@ -382,10 +384,12 @@ a.ct-button:hover::after,
 .kb-button:hover::after,
 .ei-button-icon > a:hover::after,
 a.ei-button-icon:hover::after,
+.wp-block-button__link:hover::after,
 :has(> .kb-section-link-overlay:hover) .kb-button::after,
 :has(> .kb-section-link-overlay:hover) .entry-button::after,
 :has(> .kb-section-link-overlay:hover) .ei-button-icon > a::after,
-:has(> .kb-section-link-overlay:hover) a.ei-button-icon::after {
+:has(> .kb-section-link-overlay:hover) a.ei-button-icon::after,
+:has(> .kb-section-link-overlay:hover) .wp-block-button__link::after  {
     margin-left: calc(
         var(--config-button-icon-slide-amount) + var(--config-button-gap)
     );
