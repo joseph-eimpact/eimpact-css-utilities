@@ -158,6 +158,9 @@
     }
 }
 
+header#header [data-row*=middle] {
+    z-index: 10;
+}
 header#header [data-device="desktop"] [data-items] > * {
     margin-inline: 0px; /* This allows the space between header blocks to be consistent with gap size set below. */
 }
@@ -395,6 +398,10 @@ a.ei-button-icon:hover::after,
     );
     margin-right: calc(var(--config-button-icon-slide-amount) * -1);
 }
+:has(> .kb-section-link-overlay:hover) .ei-button-icon > a,
+:has(> .kb-section-link-overlay:hover) .ei-button-icon {
+    color: var(--ei-custom-hover-color, var(--theme-link-hover-color));
+}
 
 /* CARD BUTTONS ALIGNMENT */
 .kt-inner-column-height-full .kt-inside-inner-col {
@@ -402,7 +409,7 @@ a.ei-button-icon:hover::after,
     flex-direction: column;
     justify-content: flex-start;
 }
-.kt-inner-column-height-full :is(.wp-block-buttons, .kb-buttons-wrap) {
+.kt-inner-column-height-full :is(.wp-block-buttons, .kb-buttons-wrap, .ei-button-icon) {
     flex-grow: var(--config-card-buttons-align-bottom);
     align-items: flex-end;
 }
