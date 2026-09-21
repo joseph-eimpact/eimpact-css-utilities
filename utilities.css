@@ -14,7 +14,7 @@
         --config-submenu-bg-color--hover: color-mix(
             in srgb,
             var(--theme-palette-color-1) 5%,
-            inherit
+            white
         );
 
         /* SWIPER / STRONG TESTIMONIAL CONFIG */
@@ -33,8 +33,8 @@
 
         /* TESTIMONIALS CONFIG */
         --config-testimonial-platform-size: 48px;
-        --config-testimonial-slide-padding-x: 48px;
-        --config-testimonial-slide-padding-y: 32px;
+        --config-testimonial-slide-padding-x: 32px;
+        --config-testimonial-slide-padding-y: 48px;
         --config-testimonial-bg-color: white;
         --config-testimonial-box-shadow: none;
         --config-testimonial-border-color: unset;
@@ -340,10 +340,10 @@ div.strong-view.controls-style-buttons:not(.rtl) a.wpmslider-next {
 /* in progress... */
 div.strong-view.wpmtst-unstyled .wpmtst-testimonial {
     padding-block: calc(
-        var(--inset) + var(--config-testimonial-slide-padding-x)
+        var(--inset) + var(--config-testimonial-slide-padding-y)
     );
     padding-inline: calc(
-        var(--inset) + var(--config-testimonial-slide-padding-y)
+        var(--inset) + var(--config-testimonial-slide-padding-x)
     );
     &::after {
         content: "";
