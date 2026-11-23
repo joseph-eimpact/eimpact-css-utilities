@@ -63,7 +63,7 @@
 
 @layer tokens {
     :root {
-        --ei-transition: all 350ms ease-in-out;
+        --ei-transition: var(--theme-transition, all 350ms ease-in-out);
         --ei-container-margin: max(
             0px,
             calc( (100vw - var(--theme-normal-container-max-width, var(--config-fluid-screen-width-max))) / 2 )
@@ -83,13 +83,13 @@
         max-width: var(--ei-narrow-max) !important;
         margin-inline: auto !important;
     }
-    .ei-shadow-1 > * {
+    .ei-shadow-1 {
         box-shadow: var(--ei-box-shadow-1);
     }
-    .ei-shadow-2 > * {
+    .ei-shadow-2 {
         box-shadow: var(--ei-box-shadow-2);
     }
-    .ei-shadow-1--hover-2 > * {
+    .ei-shadow-1--hover-2 {
         transition: var(--ei-transition);
         box-shadow: var(--ei-box-shadow-1);
         &:hover {
